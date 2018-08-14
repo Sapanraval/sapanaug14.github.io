@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta = charset="UFT-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+    <title>Account & Portfolio Mapping</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+ <body>
+  <header>
+    
+    <h1>Account & Portfolio</h1>
+  </header>
+
+ 
+    <fieldset>
+    <label class="blocklabel">Select Account</label>
+    <select id="account" class="multiple-options" name="states[]" multiple="multiple">
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+    </select>
+
+      <label>
+      Select All</label>
+      <input type="checkbox" id="selectall">
+     
+
+
+    <label class="blocklabel">Select Portfolio</label>
+    <select id="portfolio" class="multiple-options" name="states[]" multiple="multiple">
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+      <option value="00100">00100</option>
+    </select>
+
+      <lable>
+      Select All
+     <input type="checkbox" id="selectall_2">
+     </lable>
+
+
+
+    <button id="button1"> Submit </button>
+
+    </fieldset>
+
+
+        <table id="sample1" class="example"  style="width:100%"></table>
+
+    <table>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script  src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script  src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+<script  src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script  src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+<script  src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+
+
+<script>
+    function arrayToTable(tableData) {
+        var table = $('<table  id="sample1"></table>');
+        $(tableData).each(function (i, rowData) {
+            var row = $('<tr></tr>');
+            $(rowData).each(function (j, cellData) {
+                row.append($('<td>'+cellData+'</td>'));
+            });
+            table.append(row);
+        });
+        return table;
+    }
+    $.ajax({
+        type: "GET",
+        url: "data/Sample_Data.csv",
+        success: function (data) {
+            $('#sample1').append(arrayToTable(Papa.parse(data).data));
+        }
+    }).done(function(){
+            $('#sample1').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'pageLength', 'csv', 'excel', 'pdf', 'print'
+        ],
+        lengthMenu: [
+            [ 10, 25, 50, -1 ],
+            [ '10 rows', '25 rows', '50 rows', '100 rows','Show all']
+        ],
+
+        bSort: false,
+                aoColumns: [ { sWidth: "45%" }, { sWidth: "45%" }, { sWidth: "10%", bSearchable: false, bSortable: false } ],
+                "scrollY":        "200px",
+                "scrollCollapse": true,
+                "info":           true,
+                "paging":         true
+    } );
+});
+</script>
+
+</body>
+
+</html>
