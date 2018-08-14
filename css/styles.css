@@ -1,0 +1,151 @@
+html {
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #ffffba;
+	line-height: 1.5;
+}
+
+*, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    .dataTables_wrapper {
+      border: #222 solid 1px;
+      padding: 2rem;
+    }
+
+header {
+  background-color:  #002663;
+  padding: 10px;
+  text-align: center;
+  color: #ccc;
+
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: none; url(../img/Liberty_back.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+
+fieldset {
+	
+	border: #ccc solid 1px;
+	padding: 2rem;
+	margin-top: 2rem;
+	margin-left: 3rem;
+	width: 90%;
+	color: #ccc;
+	display: block;
+	background-color: #002663;
+	font-weight: bold;
+
+}
+
+
+
+    .dataTables_wrapper {
+      border: #ccc solid 1px;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-left: 3rem;
+      margin-bottom: 2rem;
+      width: 90%;
+      color: #ccc;
+      background-color: #002663;
+    }
+
+form{
+	display: inline;
+	width: 80%;
+	padding:3rem;
+	font-style: bold;
+	font-size: 15px;
+	font-weight: bolder;
+	color: #ccc;
+	background-color: #7c7d7f;
+
+}
+
+.blocklabel {
+	display: block;
+}
+
+#enter-info label {
+	display: block;
+	margin-top: 1rem;
+	font-size: 17px;
+}
+
+#button1{
+	border: 0;
+	font-weight: bold;
+	padding: .5rem .5rem;
+	font-size: 1rem;
+	border-radius: 7px;
+	width: 20%;
+	display: block;
+	margin-top: 1rem;
+}
+
+#account{
+
+	margin-top: 1rem;
+	margin-left: 4rem;
+	width: 60%;
+}
+
+#portfolio{
+
+	margin-top: 1rem;
+	margin-left: 4rem;
+	width: 60%;
+}
+
+
+#link-button{
+	margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.button2{
+	display: inline-block;
+	border: 0;
+	font-weight: bold;
+	padding: .5rem .5rem;
+	font-size: 1rem;
+	border-radius: 5px;
+	margin: 1rem 1rem 1rem 1rem;
+}
+
+table.dataTable {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  }
+
+   thead
+{
+  color:#ccc;
+  text-align: left;
+}
+
+table.dataTable{
+    background-color: #5381ac;
+    color: #ccc;
+    border-top: #ccc solid;
+     }
+     
